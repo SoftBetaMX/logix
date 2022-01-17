@@ -1,0 +1,53 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "logix/1.0.0": {
+        "dependencies": {
+          "libplctag.NativeImport": "1.0.12.0",
+          "LibplctagWrapper": "1.0.0.0"
+        },
+        "runtime": {
+          "logix.dll": {}
+        }
+      },
+      "libplctag.NativeImport/1.0.12.0": {
+        "runtime": {
+          "libplctag.NativeImport.dll": {
+            "assemblyVersion": "1.0.12.0",
+            "fileVersion": "1.0.12.0"
+          }
+        }
+      },
+      "LibplctagWrapper/1.0.0.0": {
+        "runtime": {
+          "LibplctagWrapper.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "logix/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "libplctag.NativeImport/1.0.12.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibplctagWrapper/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

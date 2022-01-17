@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SoftBetaMxLogix</name>
+    </assembly>
+    <members>
+        <member name="T:SoftBetaMxLogix.logix">
+            <summary>
+             This class performs an important function.
+            </summary>
+        </member>
+        <member name="P:SoftBetaMxLogix.logix.Timeout">
+            <summary>
+            Tiempo de Respuesta PLC Milisegundos
+            <list type="bullet">
+            <seealso cref="T:System.Int32"/>
+            </list>
+            <list type="bullet">
+            <para>Default: <strong>5000</strong></para>
+            </list>
+            </summary>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.#ctor(System.String)">
+             <summary>
+            <c>Creando conexion a PLC</c>
+            Eg:<code>logix client  = new logix("192.168.0.100");</code>
+             </summary>
+             <param name="ip">direccion ip del PLC</param>
+             <returns>Retornara Instancia <see cref="T:SoftBetaMxLogix.logix"/></returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.readBinary(System.String)">
+            <summary>
+            This method returning some data
+            </summary>
+            <param name="tagName">Direccion de Tag Eg:B3:0</param>
+            <returns>Retornara Array Bool[16]</returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.WriteBinary(System.String,System.Boolean[])">
+            <summary>
+            <c>WriteBinary</c> Escribe Falso o verdadero  (Tag Eg:B3:0)
+            </summary>
+            <param name="tagName">Tag a escribir Eg:B3:0</param>
+            <param name="values">Parametro Array Bool[16] falso o true dependiendo </param>
+            <returns> retorna true si se realizo correctamente</returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.WriteSingleBinary(System.String,System.Boolean)">
+            <summary>
+            <c>WriteSingleBinary</c> Esribe en la direccion de Tag Eg: <code> bool result =  WriteSingleBinary("B3:0/0", True) </code>
+            </summary>
+            <param name="tagName">Tag a escribir Eg:B3:0/0</param>
+            <param name="value">False O True</param>
+            <inheritdoc cref="T:System.Boolean"/>
+            <returns><strong><seealso cref="T:System.Boolean"/></strong></returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.WriteOneShotBinary(System.String)">
+            <summary>
+            <c>WriteOneShotBinary</c> Enviara un dato <strong>True</strong> a la direccion de <paramref name="tagName"/>
+            en 10 ms cambia a <strong>False</strong>
+            <code> bool boolReturn = WriteOneShotBinary("B3:0/0");</code>
+            </summary>
+            <param name="tagName">Eg:B3:0/0</param>
+            <returns><strong><seealso cref="T:System.Boolean"/></strong></returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.readSingleInteger(System.String)">
+            <summary>
+            <c>readSingleInteger</c> Lee dato <see cref="T:System.Int32"/> de la direcion "N".
+            <completionlist cref="T:SoftBetaMxLogix.logix.dataTimer"/>
+            </summary>
+            
+            <param name="tagName"></param>
+            <returns><strong><seealso cref="T:System.Int32"/></strong></returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.readSingleInteger(System.String,System.Int32)">
+            <summary>
+            <c>readSingleInteger</c> Lee dato <see cref="T:System.Int32"/> de la direcion "N" <paramref name="tagName"/>
+            <list type="bullet"><paramref name="tagName"/> = Direccion N
+            </list>
+            <list type="bullet"><paramref name="qty"/> = Cantidad(<see cref="T:System.Int32"/>) a leer siguientes a partir de la direccion <paramref name="tagName"/> </list>
+            </summary>
+            <param name="tagName">Eg:"N7:0"</param>
+            <param name="qty">Cantidad <see cref="T:System.Int32"/> </param>
+            <returns>Array <see cref="T:System.Int32"/>[16]</returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.writeSingleInteger(System.String,System.Int32)">
+             <summary>
+             <c>writeSingleInteger</c> Escribe datos <see cref="T:System.Int32"/> en Direccion
+             <code>writeSingleInteger("N7:0", 1234);</code>
+             <list type="bullet">
+             <param name="tagName">Eg:"N7:0"</param>
+             </list>
+             <list type="bullet">
+             <param name="value">-32767 to 32767</param>
+            </list>
+             </summary>
+             <returns><see cref="T:System.Boolean"/></returns>
+        </member>
+        <member name="M:SoftBetaMxLogix.logix.readTimer(System.String,SoftBetaMxLogix.logix.dataTimer)">
+             <summary>
+             Lee datos de contadores(Timer).
+            
+             <see href="https:\\www.SoftbetaMx.com">SoftBetaMX.com</see>
+             <para>
+             Example usage:
+             <c>readTimer("T4:0",dataTimer.ACC)</c>
+             </para>
+             <list type="bullet">
+             <param name="tagName"><see cref="T:System.String"/></param>
+             </list>
+             <list type="bullet">
+             <param name="data"><see cref="T:SoftBetaMxLogix.logix.dataTimer"/></param>
+            </list>
+             </summary>
+             <returns><see cref="T:System.Int32"/></returns>
+        </member>
+    </members>
+</doc>
